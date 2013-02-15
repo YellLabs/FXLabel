@@ -88,7 +88,7 @@
     while (index < [words count])
     {
         NSInteger lineCount = [lines count];
-        if (lineCount && ((lineCount + 1) * font.lineHeight + lineCount * font.pointSize * lineSpacing) > size.height)
+        if (lineCount && ((lineCount + 1) * font.lineHeight + lineCount * roundf(font.pointSize * lineSpacing)) > size.height)
         {
             //append remaining text to last line
             NSArray *remainingWords = [words subarrayWithRange:NSMakeRange(index, [words count] - index)];
